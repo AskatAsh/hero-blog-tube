@@ -43,7 +43,7 @@ const showAllDefault = (gotData) => {
     }
     dataArray.forEach(data => {
         // console.log(data.authors[0].verified);
-        const timeStamp = toHourAndMinutes(data.others.posted_date);
+        const timeStamp = convertPublishedTime(data.others.posted_date);
         // console.log(timeStamp);
         const div = document.createElement('div');
         div.innerHTML = `
@@ -103,14 +103,30 @@ categories.forEach(category => {
 });
 
 // function to convert time from second to hour and minute
-const toHourAndMinutes = (gotTime) => {
+const convertPublishedTime = (gotTime) => {
     if (gotTime === "") {
         // console.log("empty");
         return '';
     }
     else {
         second = parseInt(gotTime);
-        if (second >= 3600) {
+        if(second >= 31104000){
+            const toYear = Math.floor(second / 31104000);
+            return `${toYear} years ago`;
+        }
+        else if(second >= 2592000){
+            const toMonth = Math.floor(second / 2592000);
+            return `${toMonth} months ago`;
+        }
+        else if(second >= 604800){
+            const toWeek = Math.floor(second / 604800);
+            return `${toWeek} weeks ago`;
+        }
+        else if(second >= 86400){
+            const toDay = Math.floor(second / 86400);
+            return `${toDay} days ago`;
+        }
+        else if (second >= 3600) {
             const toHour = Math.floor(second / 3600);
             const rem = second % 3600;
             const toMinute = Math.floor(rem / 60);
