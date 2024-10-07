@@ -25,9 +25,6 @@ const checkStatus = (gotData) => {
             <div><img src="./assets/Icon.png" alt=""></div>
             <p class="text-[#171717] text-3xl md:text-4xl font-bold text-center">Oops!! Sorry, There is no <br> content here</p>
         </div> `;
-        // console.log("Sorry!! no data to show");
-        // console.log(gotData.message);
-        // showAllDefault(gotData);
     }
 }
 
@@ -35,12 +32,13 @@ const checkStatus = (gotData) => {
 const showAllDefault = (gotData) => {
     // console.log(gotData);
     cardsContainer.innerHTML = "";
-    // console.log(gotData.data[0].others.posted_date);
     let dataArray;
     if (sortByViews) {
         dataArray = gotData;
+        console.log("sorted by views");
     }
     else {
+        console.log("not sorted by views");
         dataArray = gotData.data;
     }
     dataArray.forEach(data => {
@@ -73,7 +71,7 @@ const showAllDefault = (gotData) => {
 
 
 const categories = document.querySelectorAll('.tag');
-
+// fetch data according to clicked category
 function handleCategoryClick(event) {
     sortByViews = false;
     // add and remove background color on click
@@ -129,16 +127,13 @@ const toHourAndMinutes = (gotTime) => {
     }
 }
 
-
 const sortByViewsButton = document.getElementById('sortByView');
 
 // Function to sort blogs by views in descending order
 function sortBlogs(blogData) {
     sortByViewsButton.addEventListener('click', function () {
         const sortedBlogs = [...blogData.data];
-
         sortedBlogs.sort((a, b) => removeLetterFromString(b.others.views) - removeLetterFromString(a.others.views));
-
         // console.log(sortedBlogs);
         if (blogData.status == false) {
             checkStatus(blogData);
@@ -147,12 +142,10 @@ function sortBlogs(blogData) {
             sortByViews = true;
             showAllDefault(sortedBlogs);
         }
-
     });
-
 };
 
-// function to convert views stirng to numbers 
+// function to convert views string to numbers 
 const removeLetterFromString = (str) => {
     // const newString = str.slice(0, -1);
     const newString = str.substring(0, str.length - 1);
