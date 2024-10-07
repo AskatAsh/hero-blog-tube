@@ -49,7 +49,7 @@ const showAllDefault = (gotData) => {
         // console.log(timeStamp);
         const div = document.createElement('div');
         div.innerHTML = `
-        <div class="flex flex-col gap-3 border">
+        <div class="flex flex-col gap-3">
                 <div class="rounded-md overflow-hidden relative">
                     <img src="${data.thumbnail}" alt="" class="h-[200px] w-full object-cover">
                     ${timeStamp ? `<p class="showTime absolute bg-[#171717] text-white bottom-2 right-2 py-1 px-2 rounded-md text-xs">${timeStamp}</p>` : ''}
