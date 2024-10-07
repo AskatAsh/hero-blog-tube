@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHero Blogs</title>
+    <!-- custom css styles -->
+    <link rel="stylesheet" href="./style.css">
+
+    <!-- link to tailwind and daisy UI cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.3/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <header>
+        <nav class="flex flex-col md:flex-row items-center flex-wrap justify-around py-5 gap-3">
+            <div>
+                <img src="./assets/Logo.png" alt="website logo">
+            </div>
+            <div>
+                <button id="sortByView" class="btn mr-2">Sort by View</button>
+                <button id="blogs" class="btn bg-[#FF1F3D] text-white ml-2"><a href="./blog.html">Blog</a></button>
+            </div>
+        </nav>
+    </header>
+
+    <hr><br>
+
+    <main class="max-w-[1440px] w-11/12 mx-auto border-2">
+        <ul id="categories" class="gap-6">
+            <li id="all" class="tag btn bg-[#FF1F3D] text-white">All</li>
+            <li id="music" class="tag btn">Music</li>
+            <li id="comedy" class="tag btn">Comedy</li>
+            <li id="drawing" class="tag btn">Drawing</li>
+        </ul>
+
+        <div id="main-container" class="my-10 gap-5">
+            
+        </div>
+    </main>
+</body>
+
+<!-- link to the main javascript file -->
+<script src="./js/script.js"></script>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phero Blog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-sky-50 text-[#171717]">
+    <header class="w-full md:w-3/4 mx-auto px-4">
+        <p class="font-medium py-5"><a href="./index.html">Home</a> > <span class="text-gray-500">Blog</span></p>
+        <hr>
+        <h3 class="text-xl font-medium py-4">Table of Contents:</h3>
+        <ol class="list-disc ml-10 text-[#595959] font-medium">
+            <li><a href="#var_let_const" class="hover:text-blue-700">The scope of var, let, and const</a></li>
+            <li><a href="#null_undefined" class="hover:text-blue-700">The use cases of null and undefined</a></li>
+            <li><a href="#rest_api" class="hover:text-blue-700">What do you mean by REST API?</a></li>
+        </ol>
+    </header>
+    <main class="w-full md:w-3/4 mx-auto px-4">
+        <article>
+            <h2 class="text-4xl font-bold my-5" id="var_let_const">The scope of var, let, and const</h2>
+            <p>In javascript, <strong>Var, Let and Const</strong> are keywords that are used to declare variables. Var was used until <strong>ES6</strong>. After ES6, two new variables <strong>Let and const</strong> are introduced.</p>
+            <p class="font-bold">The scope of var, let and const are discussed here:</p>
+            <h3 class="mt-5"><strong>1. Var</strong></h3>
+            <ul class="list-disc ml-10">
+                <li class="py-3"><strong>Function Scope:</strong> Variables declared with var are function-scoped, meaning they are only accessible within the function in which they are declared.</li>
+                <li><strong>Block Scope:</strong> var does not have block-level scope, so if a var variable is declared inside a block (like an if statement or a loop), it is still accessible outside that block.</li>
+            </ul>
+
+            <h3 class="mt-5"><strong>2. Let</strong></h3>
+            <ul class="list-disc ml-10">
+                <li class="py-3"><strong>Function Scope:</strong> Variables declared with let are also function-scoped. They are not be accessible outside that function.</li>
+                <li><strong>Block Scope:</strong> Variables declared with let have block-level scope. They are accessible only within the block (like if statement, loop) in which they are defined.</li>
+            </ul>
+
+            <h3 class="mt-5"><strong>3. Const</strong></h3>
+            <ul class="list-disc ml-10">
+                <li class="py-3"><strong>Constant Value:</strong> const is used to declare constants, and the value of a const variable cannot be reassigned after it's initialized. However, the contents of an object or array declared with const can still be modified, as long as the variable itself is not reassigned.</li>
+                <li><strong>Block Scope:</strong> Like let, variables declared with const are block-scoped.</li>
+            </ul>
+            <br>
+            <p>In modern javascript, Var is not used anymore. It's recommended to use let and const because they are better at scoping and they also help in writing bug free code.</p>
+            <br>
+            <p>There is another reason for using let and const over var and it is because of <strong>hoisting.</strong></p>
+            <br>
+            <p>Variables declared with var are hoisted to the top of their containing function or global scope. This means you can access them before their declaration, but they will be undefined until they are assigned a value.</p>
+            <br>
+            <p>Variables declared with let are also hoisted, but unlike var, they are not initialized until their declaration is reached, so you cannot access them before the line where they are declared.</p>
+        </article>
+
+        <article>
+            <h2 class="text-4xl font-bold mt-10 mb-5" id="null_undefined">The use cases of null and undefined</h2>
+            <p>In many programming languages, including JavaScript, <strong>null and undefined</strong> are two distinct values with specific use cases.</p>
+            <p class="font-bold">The use cases of null and undefined discussed here:</p>
+            <h3 class="mt-5"><strong>1. Null</strong></h3>
+            <ul class="list-disc ml-10">
+                <li class="py-3"><strong>Explicit Absence of Value:</strong> Null is often used to explicitly indicate the absence of a value. It is a way of saying that a variable or object property has no meaningful value or hasn't been assigned a value yet.</li>
+                <li><strong>Database and API Responses:</strong> Null is commonly used in database systems and API responses to indicate that a field or property has no data associated with it.</li>
+            </ul>
+            <h3 class="mt-5"><strong>1. Undefined</strong></h3>
+            <ul class="list-disc ml-10">
+                <li class="py-3"><strong>Variable Declaration:</strong> In JavaScript, a variable that has been declared but hasn't been assigned a value is undefined. </li>
+                <li><strong>Function parameters and return value:</strong> Function parameters that are not provided with values become undefined.
+                <br>If a function does not have a return statement or explicitly returns a value, it will return undefined.</li>
+            </ul>
+        </article>
+
+        <article>
+            <h2 class="text-4xl font-bold mt-10 mb-5" id="rest_api">What do you mean by REST API?</h2>
+            <p>The full meaning of <strong>RESTful API (REST API)</strong> is <strong>Representational State Transfer</strong>. It's a type of web API that is designed to enable the communication and interaction between different software systems over the internet.</p>
+            <p class="font-bold">Here are some key points REST API:</p>
+            <ul class="list-disc ml-10">
+                <li class="py-3"><strong>Uniform Interface:</strong> REST APIs have a consistent and uniform set of operations, such as using HTTP methods like GET (for retrieving data), POST (for creating data), PUT (for updating data), and DELETE (for deleting data).</li>
+                <li class="pb-3"><strong>Resource-Based:</strong> Resources are the key abstractions in REST, and each resource is identified by a unique URI (Uniform Resource Identifier). Clients interact with these resources using a small set of standard methods.</li>
+            </ul>
+        </article>
+    </main>
+</body>
+</html>

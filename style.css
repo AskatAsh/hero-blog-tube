@@ -1,0 +1,19 @@
+#main-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    justify-content: center;
+}
+#categories{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(40px, 100px)); 
+    justify-content: center;
+}
+#wrapper{
+    border: 2px solid lightgray;
+}
+
+@media screen and (max-width: 576px) {
+    #main-container{
+        grid-template-columns: 1fr;
+    }
+}
